@@ -1,4 +1,4 @@
-# GetBetter
+# MERN: Full stack Authorization app using JWT and bcrypt 
 A MERN stack web application demonstrate authorization system using JSON web token and bcrypt packages.
 M - MongoDB
 E - Express.js
