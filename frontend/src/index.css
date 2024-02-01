@@ -1,0 +1,193 @@
+header a {
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 16px;
+  background-color: black;
+  border-radius: 7px;
+  padding: 12px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.root-layout-header {
+  display: flex;
+  align-items: center;
+}
+
+.root-layout-header h1 {
+  margin: 0;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: white;
+  margin-left: 30px;
+  font-size: 16px;
+  padding: 10px;
+  color: black;
+}
+
+nav a:hover {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+nav a::before {
+  position: absolute;
+  right: -15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+nav a:hover::before {
+  opacity: 1;
+}
+
+nav button {
+  background-color: transparent;
+  color: black;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: crimson;
+  color: white;
+}
+
+/* forms */
+.card {
+  width: 400px;
+  padding: 40px;
+  border-radius: 8px;
+  border: 0.5px solid black;
+  background-color: #fff;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  width: 30%;
+  background-color: black;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.error-message {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+
+/* main page CSS  ---- IGNORE if you want - just wanted to look pretty */
+/* TravelBlogPage.css */
+
+.travel-blog-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #777;
+}
+
+.vacation-places {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.place-card {
+  width: 48%;
+  margin: 1%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #333;
+}
+
+.place-details {
+  padding: 10px;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+}
