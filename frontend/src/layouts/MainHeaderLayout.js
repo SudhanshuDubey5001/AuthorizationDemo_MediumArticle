@@ -1,6 +1,15 @@
+import { useDispatch } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
+import { logout } from "../redux/slices/authSlice";
 
 export default function MainHeaderLayout() {
+  const dispatcher = useDispatch();
+
+  const logoutuser = (e) => {
+    e.preventDefault();
+    dispatcher(logout());
+  };
+
   return (
     <div>
       <header>
@@ -14,7 +23,7 @@ export default function MainHeaderLayout() {
             <NavLink to="/item1">Book</NavLink>
             <NavLink to="/item2">Pricing</NavLink>
             <NavLink to="/item3">Account</NavLink>
-            <button>Logout</button>
+            <button onClick={logoutuser}>Logout</button>
           </div>
         </nav>
       </header>

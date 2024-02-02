@@ -1,13 +1,35 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { login } from "../redux/slices/authSlice";
+import { authAPI } from "../services/api";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
-  const handleSubmitButton = (e) => {
+  const dispatcher = useDispatch();
+
+  const handleSubmitButton = async (e) => {
     e.preventDefault();
+    const response = await authAPI.api_login({
+      email: email,
+      password: password,
+    });
 
+    if (!response) {
+      setError("Some error occurred. Try again later");
+      return;
+    }
+
+    if (response.error) {
+      setError(response.error);
+      return;
+    }
+
+    const userJSON = JSON.stringify(response);
+    dispatcher(login(userJSON));
   };
 
   return (
@@ -35,12 +57,18 @@ export default function Login() {
               required
             />
           </div>
-          <button type="submit" className="submit-btn">
+          <button
+            onClick={handleSubmitButton}
+            type="submit"
+            className="submit-btn"
+          >
             Submit
           </button>
           <p>
             New user? <Link to="/signup">Create an account</Link>
           </p>
+
+          {error && <div className="error-message">{error}</div>}
         </form>
       </div>
     </div>

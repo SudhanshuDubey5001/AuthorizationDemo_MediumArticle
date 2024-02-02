@@ -19,9 +19,9 @@ const user_signup = async (req, res) => {
     console.log('Generating token now...');
     const token = generateToken(user._id);
     console.log('Token generated = '+token);
-    res.status(201).json({ email, token });
+    res.status(200).json({ email, token });
   } catch (error) {
-    res.status(400).json({ error });
+    res.status(400).json({ error: error.message });
   }
 };
 
@@ -35,7 +35,7 @@ const user_login = async (req, res) => {
     const token = generateToken(user._id);
     res.status(200).json({ email, token });
   } catch (error) {
-    res.status(400).json({ error });
+    res.status(400).json({ error: error.message });
   }
 };
 

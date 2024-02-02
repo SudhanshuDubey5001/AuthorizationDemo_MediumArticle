@@ -18,6 +18,7 @@ export default function AuthHeaderLayout() {
         </nav>
       </header>
       <main>
+        {/* Ignore this Outlet for now */}
         <Outlet />
       </main>
     </div>
